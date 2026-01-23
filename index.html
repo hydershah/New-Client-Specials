@@ -219,7 +219,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 50%, var(--gold-light) 100%);
+      background: var(--white);
       position: relative;
       overflow: hidden;
     }
@@ -227,13 +227,112 @@
     #hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 70%;
-      height: 200%;
-      background: linear-gradient(135deg, transparent 0%, rgba(116, 0, 101, 0.03) 100%);
+      top: -300px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(116,0,101,0.06) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212,165,116,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-decoration {
+      position: absolute;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .hero-decoration-1 {
+      top: 15%;
+      left: 5%;
+      width: 100px;
+      height: 100px;
+      border: 1px solid rgba(116,0,101,0.08);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero-decoration-2 {
+      top: 60%;
+      left: 8%;
+      width: 20px;
+      height: 20px;
+      background: rgba(212,165,116,0.25);
+      animation: float 4s ease-in-out infinite reverse;
+    }
+
+    .hero-decoration-3 {
+      top: 25%;
+      right: 8%;
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(212,165,116,0.2);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .hero-decoration-4 {
+      bottom: 20%;
+      right: 5%;
+      width: 140px;
+      height: 140px;
+      border: 1px solid rgba(116,0,101,0.06);
+      animation: float 7s ease-in-out infinite reverse;
+    }
+
+    .hero-decoration-5 {
+      top: 40%;
+      left: 15%;
+      width: 12px;
+      height: 12px;
+      background: rgba(116,0,101,0.12);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hero-decoration-6 {
+      bottom: 30%;
+      left: 3%;
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(116,0,101,0.04) 0%, transparent 100%);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-decoration-7 {
+      top: 10%;
+      right: 15%;
+      width: 8px;
+      height: 8px;
+      background: rgba(212,165,116,0.4);
+      animation: float 4s ease-in-out infinite reverse;
+    }
+
+    .hero-decoration-8 {
+      bottom: 15%;
+      right: 20%;
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(212,165,116,0.15);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
     }
 
     .hero-content {
@@ -294,9 +393,6 @@
       font-size: 1.1rem;
       color: var(--gray-600);
       margin-bottom: 32px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .hero-cta-group {
@@ -793,126 +889,92 @@
 
     /* ===== CONTACT FORM ===== */
     #contact {
-      padding: 100px 0;
-      background: var(--off-white);
+      padding: 0;
       position: relative;
       overflow: hidden;
     }
 
-    #contact::before {
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 600px;
+    }
+
+    .contact-image {
+      display: none;
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&h=1000&fit=crop&q=80') center/cover no-repeat;
+    }
+
+    .contact-image::before {
       content: '';
       position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(116,0,101,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(116,0,101,0.85) 0%, rgba(90,0,79,0.9) 100%);
     }
 
-    #contact::after {
-      content: '';
-      position: absolute;
-      bottom: -250px;
-      left: -150px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(212,165,116,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
+    .contact-image-content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      color: var(--white);
     }
 
-    .contact-decoration {
-      position: absolute;
-      pointer-events: none;
+    .contact-image-content h3 {
+      font-size: 2.5rem;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.2;
     }
 
-    .contact-decoration-1 {
-      top: 10%;
-      left: 8%;
-      width: 120px;
-      height: 120px;
-      border: 1px solid rgba(116,0,101,0.1);
-      border-radius: 50%;
+    .contact-image-content p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 32px;
+      line-height: 1.7;
     }
 
-    .contact-decoration-2 {
-      top: 50%;
-      right: 5%;
-      width: 80px;
-      height: 80px;
-      border: 1px solid rgba(116,0,101,0.08);
-      border-radius: 50%;
+    .contact-benefits {
+      list-style: none;
     }
 
-    .contact-decoration-3 {
-      bottom: 20%;
-      left: 12%;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, rgba(116,0,101,0.05) 0%, transparent 100%);
-      border-radius: 50%;
+    .contact-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 1rem;
     }
 
-    .contact-decoration-4 {
-      top: 25%;
-      right: 15%;
-      width: 30px;
-      height: 30px;
-      background: rgba(212,165,116,0.2);
-      border-radius: 50%;
+    .contact-benefits li svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+      flex-shrink: 0;
     }
 
-    .contact-decoration-5 {
-      bottom: 35%;
-      right: 10%;
-      width: 12px;
-      height: 12px;
-      background: rgba(116,0,101,0.15);
-      border-radius: 50%;
-    }
-
-    .contact-decoration-6 {
-      top: 15%;
-      left: 25%;
-      width: 8px;
-      height: 8px;
-      background: rgba(212,165,116,0.3);
-      border-radius: 50%;
-    }
-
-    .contact-decoration-7 {
-      bottom: 10%;
-      right: 25%;
-      width: 150px;
-      height: 150px;
-      border: 1px solid rgba(212,165,116,0.15);
-      border-radius: 50%;
-    }
-
-    .contact-pattern {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0.4;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(116,0,101,0.03) 0%, transparent 25%),
-        radial-gradient(circle at 90% 80%, rgba(116,0,101,0.03) 0%, transparent 25%),
-        radial-gradient(circle at 50% 50%, rgba(212,165,116,0.02) 0%, transparent 40%);
-      pointer-events: none;
+    .contact-form-side {
+      background: var(--white);
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .contact-content {
       position: relative;
       z-index: 1;
+      max-width: 480px;
+      margin: 0 auto;
     }
 
     .contact-header {
       text-align: center;
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
 
     .contact-header .section-label {
@@ -921,6 +983,7 @@
 
     .contact-header .section-title {
       color: var(--gray-900);
+      font-size: 1.75rem;
     }
 
     .contact-header .section-description {
@@ -929,25 +992,40 @@
 
     .form-card {
       background: var(--white);
-      border-radius: 24px;
-      padding: 40px 32px;
-      max-width: 500px;
-      margin: 0 auto;
-      box-shadow: 0 25px 50px -12px rgba(116,0,101,0.15);
-      border: 1px solid rgba(116,0,101,0.08);
-      position: relative;
+      padding: 0;
+      max-width: 100%;
     }
 
-    .form-card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-      border-radius: 4px;
+    @media (min-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-image {
+        display: block;
+      }
+
+      .contact-form-side {
+        padding: 80px 60px;
+      }
+
+      .contact-header {
+        text-align: left;
+      }
+
+      .contact-header .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .contact-form-side {
+        padding: 100px 80px;
+      }
+
+      .contact-image-content {
+        padding: 80px 60px;
+      }
     }
 
     .form-group {
@@ -1144,6 +1222,14 @@
 
   <!-- Hero Section -->
   <section id="hero">
+    <div class="hero-decoration hero-decoration-1"></div>
+    <div class="hero-decoration hero-decoration-2"></div>
+    <div class="hero-decoration hero-decoration-3"></div>
+    <div class="hero-decoration hero-decoration-4"></div>
+    <div class="hero-decoration hero-decoration-5"></div>
+    <div class="hero-decoration hero-decoration-6"></div>
+    <div class="hero-decoration hero-decoration-7"></div>
+    <div class="hero-decoration hero-decoration-8"></div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
@@ -1464,22 +1550,47 @@
 
   <!-- Contact Form -->
   <section id="contact">
-    <div class="contact-pattern"></div>
-    <div class="contact-decoration contact-decoration-1"></div>
-    <div class="contact-decoration contact-decoration-2"></div>
-    <div class="contact-decoration contact-decoration-3"></div>
-    <div class="contact-decoration contact-decoration-4"></div>
-    <div class="contact-decoration contact-decoration-5"></div>
-    <div class="contact-decoration contact-decoration-6"></div>
-    <div class="contact-decoration contact-decoration-7"></div>
-    <div class="container">
-      <div class="contact-content">
-        <div class="contact-header">
-          <span class="section-label">Get Started</span>
-          <h2 class="section-title">Book Your Free Consultation & Claim Your Special</h2>
-          <p class="section-description">Take advantage of our New Client Specials today.</p>
+    <div class="contact-wrapper">
+      <div class="contact-image">
+        <div class="contact-image-content">
+          <h3>Start Your Smooth Skin Journey Today</h3>
+          <p>Join thousands of satisfied clients who have transformed their confidence with our professional laser hair removal treatments.</p>
+          <ul class="contact-benefits">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              Free consultation included
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              Packages never expire
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              Full refund if non-candidate
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+              </svg>
+              4 convenient DFW locations
+            </li>
+          </ul>
         </div>
-        <div class="form-card">
+      </div>
+      <div class="contact-form-side">
+        <div class="contact-content">
+          <div class="contact-header">
+            <span class="section-label">Get Started</span>
+            <h2 class="section-title">Book Your Free Consultation</h2>
+            <p class="section-description">Claim your New Client Special today.</p>
+          </div>
+          <div class="form-card">
           <form id="consultation-form" action="#" method="POST">
             <div class="form-group">
               <label class="form-label" for="fullName">Full Name *</label>
@@ -1511,6 +1622,7 @@
               Your information is secure and will never be shared.
             </p>
           </form>
+          </div>
         </div>
       </div>
     </div>
