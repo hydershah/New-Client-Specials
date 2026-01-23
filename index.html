@@ -630,6 +630,11 @@
 
     .services-text {
       text-align: center;
+      order: 1;
+    }
+
+    .services-image {
+      order: 2;
     }
 
     @media (min-width: 768px) {
@@ -642,11 +647,13 @@
       .services-image {
         flex: 0 0 40%;
         max-width: 400px;
+        order: 1;
       }
 
       .services-text {
         flex: 1;
         text-align: left;
+        order: 2;
       }
 
       .services-text .section-description-lg {
