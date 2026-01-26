@@ -114,9 +114,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 20px;
+      padding: 10px 12px;
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    @media (min-width: 480px) {
+      .nav-inner {
+        padding: 12px 20px;
+      }
     }
 
     .nav-logo {
@@ -126,8 +132,14 @@
     }
 
     .nav-logo img {
-      height: 40px;
+      height: 32px;
       width: auto;
+    }
+
+    @media (min-width: 480px) {
+      .nav-logo img {
+        height: 40px;
+      }
     }
 
     .nav-logo-text {
@@ -141,7 +153,20 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
+    }
+
+    .nav-actions .btn {
+      font-size: 0.75rem;
+      padding: 8px 12px;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 480px) {
+      .nav-actions .btn {
+        font-size: 0.875rem;
+        padding: 10px 20px;
+      }
     }
 
     .nav-phone {
@@ -1194,7 +1219,6 @@
     .contact-wrapper {
       display: grid;
       grid-template-columns: 1fr;
-      min-height: 600px;
     }
 
     .contact-image {
@@ -1256,12 +1280,16 @@
 
     .contact-form-side {
       background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 25%, #e8eaf6 50%, #fff8e1 75%, #e0f7fa 100%);
-      padding: 60px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding: 40px 16px;
+      display: block;
       position: relative;
       overflow: hidden;
+    }
+
+    @media (min-width: 480px) {
+      .contact-form-side {
+        padding: 60px 20px;
+      }
     }
 
     .contact-form-side::before {
@@ -1295,6 +1323,7 @@
       z-index: 1;
       max-width: 480px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .contact-header {
@@ -1340,15 +1369,23 @@
 
     .form-card {
       background: var(--white);
-      padding: 32px;
+      padding: 24px;
       max-width: 100%;
       border-radius: 20px;
       box-shadow: var(--shadow-lg);
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 480px) {
+      .form-card {
+        padding: 32px;
+      }
     }
 
     @media (min-width: 768px) {
       .contact-wrapper {
         grid-template-columns: 1fr 1fr;
+        min-height: 600px;
       }
 
       .contact-image {
@@ -1357,6 +1394,9 @@
 
       .contact-form-side {
         padding: 80px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
 
       .contact-header {
@@ -1427,8 +1467,28 @@
       background-size: 14px;
       padding-right: 36px;
       cursor: pointer;
-      height: 46px;
+      height: 46px !important;
+      min-height: 46px !important;
+      max-height: 46px !important;
       background-color: var(--gray-50);
+      overflow: hidden;
+    }
+
+    .form-group {
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin-bottom: 16px;
+    }
+
+    .form-card form {
+      display: block;
+    }
+
+    select.form-select {
+      display: block;
+      width: 100%;
+      height: 46px !important;
+      box-sizing: border-box;
     }
 
     .form-select:focus {
@@ -2005,8 +2065,8 @@
               <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="location">Preferred Location*</label>
-              <select id="location" name="location" class="form-select" required>
+              <label class="form-label" for="preferredLocation">Preferred Location*</label>
+              <select id="preferredLocation" name="location" class="form-select" required>
                 <option value="" disabled selected>Select your preferred location</option>
                 <option value="plano">Plano</option>
                 <option value="dallas">Dallas</option>
@@ -2014,7 +2074,7 @@
                 <option value="lewisville">Lewisville</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-gold btn-lg form-submit">Claim My Special & Book Consultation</button>
+            <button type="submit" class="btn btn-gold btn-lg form-submit">Book Consultation</button>
           </form>
           </div>
         </div>
