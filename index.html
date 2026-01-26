@@ -1493,10 +1493,23 @@
       padding: 12px 20px;
       box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
       z-index: 999;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .sticky-cta.visible {
+      transform: translateY(0);
     }
 
     .sticky-cta .btn {
       width: 100%;
+    }
+
+    /* Add bottom padding on mobile for sticky CTA */
+    @media (max-width: 767px) {
+      body {
+        padding-bottom: 70px;
+      }
     }
 
     /* ===== RESPONSIVE ===== */
@@ -2185,18 +2198,43 @@
       });
     }
 
-    // Hide sticky CTA when contact form is in view
+    // Show/hide sticky CTA based on scroll position
     const stickyCta = document.querySelector('.sticky-cta');
+    const heroSection = document.getElementById('hero');
     const contactSection = document.getElementById('contact');
 
-    if (stickyCta && contactSection) {
-      const observer = new IntersectionObserver((entries) => {
+    if (stickyCta && heroSection && contactSection) {
+      // Show sticky CTA only after scrolling past hero, hide when contact is in view
+      const heroObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          stickyCta.style.transform = entry.isIntersecting ? 'translateY(100%)' : 'translateY(0)';
+          if (entry.isIntersecting) {
+            stickyCta.classList.remove('visible');
+          } else {
+            // Only show if contact is not in view
+            const contactRect = contactSection.getBoundingClientRect();
+            if (contactRect.top > window.innerHeight) {
+              stickyCta.classList.add('visible');
+            }
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            stickyCta.classList.remove('visible');
+          } else {
+            // Only show if hero is not in view
+            const heroRect = heroSection.getBoundingClientRect();
+            if (heroRect.bottom < 0) {
+              stickyCta.classList.add('visible');
+            }
+          }
         });
       }, { threshold: 0.1 });
 
-      observer.observe(contactSection);
+      heroObserver.observe(heroSection);
+      contactObserver.observe(contactSection);
     }
   </script>
 
