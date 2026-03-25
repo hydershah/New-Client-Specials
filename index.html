@@ -622,6 +622,49 @@
       }
     }
 
+    /* ===== HERO FORM ===== */
+    .hero-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+
+    .hero-form-card {
+      background: var(--white);
+      padding: 28px 24px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-xl);
+      max-width: 440px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .hero-form-subtitle {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      text-align: center;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    @media (min-width: 480px) {
+      .hero-form-card {
+        padding: 36px 32px;
+      }
+    }
+
     /* ===== PRICING SECTION ===== */
     #services {
       padding: 60px 0;
@@ -2214,9 +2257,35 @@
             <a href="tel:9728002127" class="btn btn-outline">Call (972) 800-2127</a>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="hero-image-wrapper">
-            <img src="new image.png" alt="Laser hair removal treatment at Ultimate Image MedSpa">
+        <div class="hero-form">
+          <div class="hero-form-card">
+            <h3 class="hero-form-title">Book Your Free Consultation</h3>
+            <p class="hero-form-subtitle">Secure up to 60% off laser hair removal. We'll call to confirm your appointment.</p>
+            <form id="hero-consultation-form" action="#" method="POST">
+              <div class="form-group">
+                <label class="form-label" for="heroFullName">Full Name*</label>
+                <input type="text" id="heroFullName" name="fullName" class="form-input" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="heroPhone">Phone Number*</label>
+                <input type="tel" id="heroPhone" name="phone" class="form-input" placeholder="Enter your phone number" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="heroEmail">Email Address*</label>
+                <input type="email" id="heroEmail" name="email" class="form-input" placeholder="Enter your email address" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="heroPreferredLocation">Preferred Location*</label>
+                <select id="heroPreferredLocation" name="location" class="form-select" required>
+                  <option value="" disabled selected>Select your preferred location</option>
+                  <option value="plano">Plano</option>
+                  <option value="dallas">Dallas</option>
+                  <option value="richardson">Richardson</option>
+                  <option value="lewisville">Lewisville</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-gold btn-lg form-submit">Book Consultation</button>
+            </form>
           </div>
         </div>
       </div>
@@ -2979,9 +3048,9 @@
     });
 
     // Phone number formatting
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-      phoneInput.addEventListener('input', (e) => {
+    function formatPhoneInput(input) {
+      if (!input) return;
+      input.addEventListener('input', (e) => {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length >= 6) {
           value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
@@ -2991,6 +3060,8 @@
         e.target.value = value;
       });
     }
+    formatPhoneInput(document.getElementById('phone'));
+    formatPhoneInput(document.getElementById('heroPhone'));
 
     // Get URL parameters helper
     function getUrlParams() {
@@ -3041,9 +3112,8 @@
       };
     }
 
-    // Form submission handler
-    const form = document.getElementById('consultation-form');
-    if (form) {
+    // Form submission handler (shared for both hero and footer forms)
+    function handleFormSubmit(form) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -3083,7 +3153,6 @@
           });
 
           if (response.ok) {
-            // Show success message or redirect
             form.innerHTML = `
               <div style="text-align: center; padding: 40px 20px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 24 24" stroke="#740065" stroke-width="2" style="margin-bottom: 20px;">
@@ -3104,6 +3173,11 @@
         }
       });
     }
+
+    const heroForm = document.getElementById('hero-consultation-form');
+    const footerForm = document.getElementById('consultation-form');
+    if (heroForm) handleFormSubmit(heroForm);
+    if (footerForm) handleFormSubmit(footerForm);
 
     // Show/hide sticky CTA based on scroll position
     const stickyCta = document.querySelector('.sticky-cta');
