@@ -11,12 +11,12 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-5JSW2XSB');</script>
   <!-- End Google Tag Manager -->
-  <title>New Client Specials - 50% Off Laser Hair Removal, 6-Session</title>
-  <meta name="description" content="New Client Specials: 50% off laser hair removal. 6-session packs: $129 small, $279 medium, $429 large. Free consult, DFW locations, risk-free refund. Book now">
+  <title>Laser Hair Removal, HydraFacials &amp; MedSpa Treatments in Plano, TX | Ultimate Image MedSpa</title>
+  <meta name="description" content="Laser Hair Removal, HydraFacial, Tattoo Removal &amp; Body Contouring in Plano, TX. New Client Specials: 6-session laser packages from $150. Free consultation. Candela GentleMax Pro, all skin types I-VI.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="New Client Specials - 50% Off Laser Hair Removal">
-  <meta property="og:description" content="New Client Specials: 50% off laser hair removal. 6-session packs. Free consult, DFW locations, risk-free refund.">
+  <meta property="og:title" content="Laser Hair Removal, HydraFacials &amp; MedSpa Treatments in Plano, TX">
+  <meta property="og:description" content="New Client Specials in Plano: Laser Hair Removal from $150, HydraFacial, PicoWay Tattoo Removal, Emsculpt Neo Body Contouring. Free consultation.">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
@@ -519,9 +519,37 @@
     }
 
     .hero-description {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--gray-600);
-      margin-bottom: 32px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .hero-pricing-anchor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .hero-pricing-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .hero-pricing-pill strong {
+      color: var(--primary);
+      font-weight: 700;
     }
 
     .hero-cta-group {
@@ -961,6 +989,120 @@
       font-size: 0.95rem;
       color: var(--gray-600);
       line-height: 1.6;
+    }
+
+    /* Service Blocks Section */
+    #service-blocks {
+      padding: 60px 0;
+      background: var(--white);
+    }
+
+    .service-blocks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .service-blocks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-block {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .service-block:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-light);
+    }
+
+    .service-block-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .service-block-icon {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-block-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--white);
+    }
+
+    .service-block-titlewrap {
+      flex: 1;
+    }
+
+    .service-block-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0 0 4px;
+      line-height: 1.2;
+    }
+
+    .service-block-tech {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .service-block-description {
+      font-size: 1rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .service-block-cta {
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .service-block-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .service-block-cta a:hover {
+      gap: 12px;
+    }
+
+    .service-block-cta a::after {
+      content: '→';
+      font-size: 1.1rem;
     }
 
     .expertise-footer {
@@ -2220,11 +2362,16 @@
       <div class="hero-content">
         <div class="hero-text">
           <div class="hero-badge">
-            ✨New Client Exclusive
+            ✨New Client Exclusive · Plano, TX
           </div>
-          <h1 class="hero-title">Your Smooth Skin Journey <span class="highlight">Starts Here.</span></h1>
-          <p class="hero-subtitle">Laser Hair Removal Packages up to 60% OFF.</p>
-          <p class="hero-description">Available for a limited time.</p>
+          <h1 class="hero-title">Laser Hair Removal, HydraFacials &amp; MedSpa Treatments <span class="highlight">in Plano, TX</span></h1>
+          <p class="hero-subtitle">New Client Special: Laser Hair Removal Packages up to 60% OFF</p>
+          <p class="hero-description">Free Consultation + Custom Treatment Plan · Packages starting at $150 · 4674 McDermott Rd, Suite 309 (West Plano, near Frisco)</p>
+          <div class="hero-pricing-anchor">
+            <span class="hero-pricing-pill">From <strong>$150</strong> · Small Area</span>
+            <span class="hero-pricing-pill">From <strong>$330</strong> · Medium Area</span>
+            <span class="hero-pricing-pill">From <strong>$499</strong> · Large Area</span>
+          </div>
           <div class="hero-trust">
             <div class="trust-item">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -2237,7 +2384,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
-              4 DFW Locations
+              Plano · Richardson · Dallas · Lewisville
             </div>
             <div class="trust-item">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -2321,6 +2468,96 @@
       </div>
     </div>
   </div>
+
+  <!-- Service-Specific Content Blocks -->
+  <section id="service-blocks">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Treatments We Offer</span>
+        <h2 class="section-title">Premier MedSpa Services in Plano, TX</h2>
+        <p class="section-description">Medical-grade treatments performed by licensed professionals at our West Plano location (4674 McDermott Rd, Suite 309).</p>
+      </div>
+      <div class="service-blocks-grid">
+
+        <!-- Laser Hair Removal -->
+        <div class="service-block">
+          <div class="service-block-header">
+            <div class="service-block-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div class="service-block-titlewrap">
+              <h3 class="service-block-title">Laser Hair Removal</h3>
+              <span class="service-block-tech">Candela GentleMax Pro</span>
+            </div>
+          </div>
+          <p class="service-block-description">Permanent hair reduction with the medical-grade Candela GentleMax Pro &mdash; the gold standard for laser hair removal. Safe and effective on <strong>all Fitzpatrick skin types I&ndash;VI</strong>, including melanated skin. 6-session packages from $150.</p>
+          <div class="service-block-cta">
+            <a href="#contact">Book Laser Hair Removal Consultation</a>
+          </div>
+        </div>
+
+        <!-- HydraFacial -->
+        <div class="service-block">
+          <div class="service-block-header">
+            <div class="service-block-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0L12 2.69z"/>
+              </svg>
+            </div>
+            <div class="service-block-titlewrap">
+              <h3 class="service-block-title">HydraFacial</h3>
+              <span class="service-block-tech">Deep Cleanse · Hydrate · Glow</span>
+            </div>
+          </div>
+          <p class="service-block-description">Multi-step facial that cleanses, exfoliates, extracts impurities, and infuses skin with hydrating serums &mdash; all in one treatment. Instant glow with <strong>no downtime</strong>. Perfect for dull skin, congested pores, and pre-event prep.</p>
+          <div class="service-block-cta">
+            <a href="#contact">Book HydraFacial Consultation</a>
+          </div>
+        </div>
+
+        <!-- Tattoo Removal -->
+        <div class="service-block">
+          <div class="service-block-header">
+            <div class="service-block-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+              </svg>
+            </div>
+            <div class="service-block-titlewrap">
+              <h3 class="service-block-title">Tattoo Removal</h3>
+              <span class="service-block-tech">PicoWay Laser</span>
+            </div>
+          </div>
+          <p class="service-block-description">PicoWay picosecond laser technology safely removes tattoos of <strong>all ink colors</strong> &mdash; including hard-to-treat blues, greens, and reds &mdash; with fewer sessions and minimal skin damage. Faster fading, better results.</p>
+          <div class="service-block-cta">
+            <a href="#contact">Book Tattoo Removal Consultation</a>
+          </div>
+        </div>
+
+        <!-- Body Contouring -->
+        <div class="service-block">
+          <div class="service-block-header">
+            <div class="service-block-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="service-block-titlewrap">
+              <h3 class="service-block-title">Body Contouring</h3>
+              <span class="service-block-tech">Emsculpt Neo + UltraShape</span>
+            </div>
+          </div>
+          <p class="service-block-description">Non-invasive fat reduction and muscle toning with <strong>Emsculpt Neo</strong> (build muscle + burn fat) and <strong>UltraShape</strong> (targeted fat destruction). Sculpt your body with <strong>zero downtime</strong> &mdash; no surgery, no needles.</p>
+          <div class="service-block-cta">
+            <a href="#contact">Book Body Contouring Consultation</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- Pricing Section -->
   <section id="services">
